@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 ## Funding
 
 It is extremely difficult to get a project off the ground without funding.

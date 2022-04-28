@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 ## Why web 3?
 
 Getting started with Web3 might feel a little daunting. The NEAR University team is here to help you navigate this space from within the NEAR ecosystem.
