@@ -1,4 +1,4 @@
-## `near-cli`
+## Command-line Interface
 
 ### Installation
 
@@ -97,3 +97,124 @@ near call <contract> <method> <JSON arguments> --account-id <signer>
 :::tip
 Regular function calls can perform both change and view calls, but are required to pay gas fees regardless, so if you don't _have_ to perform a change, it's probably best to stick with view calls.
 :::
+
+## JavaScript API
+
+[`near-api-js`](https://www.npmjs.com/package/near-api-js) works on both the browser and on server-side Node.js.
+
+### Installation
+
+Install the JavaScript API on an NPM project.
+
+```txt
+npm install --save near-api-js
+```
+
+### Connect to RPC
+
+```js
+import { connect, keyStores } as nearApi from 'near-api-js';
+
+const networkId = 'testnet'; // or 'mainnet', 'betanet'
+
+const near = await connect({
+  keyStore: new keyStores.BrowserLocalStorageKeyStore(),
+  networkId,
+  nodeUrl: `https://rpc.${networkId}.near.org`,
+  walletUrl: `https://wallet.${networkId}.near.org`,
+  helperUrl: `https://helper.${networkId}.near.org`,
+  explorerUrl: `https://explorer.${networkId}.near.org`,
+});
+```
+
+### Authenticate wallet
+
+```js {12-15}
+import { WalletConnection } from 'near-api-js';
+
+const wallet = new WalletConnection(near);
+
+const signIn = () => {
+  // Creates a function call access key
+  wallet.requestSignIn(
+    {
+      contractId: '<contract account ID>',
+
+      // Optional properties
+      methodNames: [
+        'ft_transfer',
+        // ...
+      ],
+      successUrl: '...',
+      failureUrl: '...',
+    },
+    'App Name', // Optional
+  );
+};
+
+const signOut = () => {
+  wallet.signOut();
+};
+```
+
+:::note
+The `methodNames` list is optional. This is how function call access keys are limited in what methods they are allowed to call on a contract. If the list is specified, the only method names that must be included are those that will be called as _change_ methods.
+:::
+
+### Read Account Balance
+
+```js
+const account = await near.account('<account ID>');
+const balance = await account.getAccountBalance();
+```
+
+### Send Tokens
+
+```js
+await wallet.account().sendMoney(
+  '<receiver account ID>',
+  '1000000000000000000000000', // amount in yoctoNEAR
+);
+```
+
+### Instantiate Contract Object
+
+```js {4-11}
+import { Contract } from 'near-api-js';
+
+const contract = new Contract(wallet.account(), '<contract account ID>', {
+  viewMethods: [
+    'view_method',
+    // ...
+  ],
+  changeMethods: [
+    'change_method',
+    // ...
+  ],
+  sender: wallet.account(),
+});
+```
+
+:::note
+As opposed to the method names specified when [creating an access key](#authenticate-wallet), it is probably a good idea to specify as complete an interface of the contract as possible when instantiating a `Contract` object, particularly since view methods don't require an access key to call.
+:::
+
+### Call view method
+
+```js
+await contract.view_method({
+  arg_name: 'arg_value',
+});
+```
+
+### Call change method
+
+```js
+await contract.change_method(
+  {
+    arg_name: 'value',
+  },
+  '300000000000000', // attached gas (optional)
+  '1000000000000000000000000', // attached deposit in yoctoNEAR (optional)
+);
+```
