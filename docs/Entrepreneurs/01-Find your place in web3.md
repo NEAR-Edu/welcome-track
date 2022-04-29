@@ -18,7 +18,7 @@ Check out this article that explores why entrepreneurs should bring their ideas 
 
 When evaluating a platform as an entrepreneur, it’s important to know the types of projects that are being built on it. We’ve compiled a few case studies with some of the projects that are being built on NEAR, where you can read about the project, specific challenges they faced along the way, and why they decided to build on NEAR.
 
-## Case Studies
+**Case Studies**
 
 - <https://near.org/case-studies/flux/>
 - <https://near.org/case-studies/mintbase/>
