@@ -18,6 +18,18 @@ const config = {
   favicon: 'img/near-favicon.png',
   organizationName: 'NEAR-Edu', // Usually your GitHub org/user name.
   projectName: 'welcome-track', // Usually your repo name.
+  scripts: [
+    // https://docusaurus.io/docs/api/docusaurus-config#scripts
+    '//use.fontawesome.com/releases/v5.15.4/js/all.js',
+    {
+      src: `//cdn.mouseflow.com/projects/${mouseflowProjectId}.js`,
+      defer: true,
+    },
+  ],
+  stylesheets: [
+    '//fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap',
+    '//cdn.statically.io/gh/nearprotocol/near-global-footer/acdefee/footer.css',
+  ],
 
   presets: [
     [
@@ -170,13 +182,6 @@ const config = {
         additionalLanguages: ['rust'],
       },
     }),
-  scripts: [
-    // https://docusaurus.io/docs/api/docusaurus-config#scripts
-    {
-      src: `//cdn.mouseflow.com/projects/${mouseflowProjectId}.js`,
-      defer: true,
-    },
-  ],
 };
 
 module.exports = config;
