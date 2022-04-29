@@ -767,3 +767,7 @@ nav.pagination-nav {
 .footer__link-item {
   color: var(--ifm-color-emphasis-700);
 }
+
+.theme-doc-sidebar-item-link-level-2 {
+  --ifm-font-weight-semibold: 400;
+}

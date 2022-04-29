@@ -18,20 +18,20 @@ If you have questions about anything related to NEAR, you're always welcome to a
 ### Table of Contents
 
 - Getting Started
-  - [React App Quickstart](/Developers/Getting%20Started/React%20App%20Quickstart) <sub>The fastest way to start a NEAR React app</sub>
-  - [React Tutorial](/Developers/Getting%20Started/React%20Tutorial) <sub>Step-by-step instructions showing how to build a sample app</sub>
+  - [React App Quickstart](/Developers/Getting%20Started/React%20App%20Quickstart) - The fastest way to start a NEAR React app
+  - [React Tutorial](/Developers/Getting%20Started/React%20Tutorial) - Step-by-step instructions showing how to build a sample app
 - Quick Reference
-  - [Cheatsheet](/Developers/Quick%20Reference/Cheatsheet) <sub>Helpful near-cli commands</sub>
-  - [Cookbook](/Developers/Quick%20Reference/Cookbook) <sub>Useful React snippets</sub>
-  - [Useful Links](/Developers/Quick%20Reference/Useful%20Links) <sub>The best resources for NEAR documentation</sub>
+  - [Cheatsheet](/Developers/Quick%20Reference/Cheatsheet) - Helpful near-cli commands
+  - [Cookbook](/Developers/Quick%20Reference/Cookbook) - Useful React snippets
+  - [Useful Links](/Developers/Quick%20Reference/Useful%20Links) - The best resources for NEAR documentation
 - Theory
-  - [Application Architecture](/Developers/Theory/Application%20Architecture) <sub>How a frontend connects to a smart contract</sub>
+  - [Application Architecture](/Developers/Theory/Application%20Architecture) - How a frontend connects to a smart contract
 - Protocol
-  - [Accounts](/Developers/Protocol/Accounts) <sub>How accounts work on NEAR</sub>
-  - [Access Keys](/Developers/Protocol/Access%20Keys) <sub>How keys provide different levels of access</sub>
-  - [Storage](/Developers/Protocol/Storage) <sub>How to store data on the blockchain</sub>
+  - [Accounts](/Developers/Protocol/Accounts) - How accounts work on NEAR
+  - [Access Keys](/Developers/Protocol/Access%20Keys) - How keys provide different levels of access
+  - [Storage](/Developers/Protocol/Storage) - How to store data on the blockchain
   - [Smart Contracts](/Developers/Protocol/Smart%20Contracts)
-  - [Shards](/Developers/Protocol/Shards) <sub>NEAR's strategy for scaling the protocol</sub>
+  - [Shards](/Developers/Protocol/Shards) - NEAR's strategy for scaling the protocol
 - Comparisons To Other Blockchains
   - [Ethereum](/Developers/Comparisons%20To%20Other%20Blockchains/Ethereum)
   - [Algorand](/Developers/Comparisons%20To%20Other%20Blockchains/Algorand)
