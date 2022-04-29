@@ -153,6 +153,7 @@ export const useContract = ({
   return new Contract(wallet.account(), contractId, {
     viewMethods,
     changeMethods,
+    sender: wallet.account(),
   });
 };
 ```
@@ -195,5 +196,82 @@ export const ContractComponent = () => {
 
   // This will display the available wNEAR balance of the currently signed in account
   return wallet.isSignedIn() ? <div>{balance}</div> : null;
+};
+```
+
+## Examples
+
+Here are some examples of common use cases:
+
+### Sign in button
+
+```jsx title="src/components/SignInButton.jsx"
+import React from 'react';
+import { useWallet } from './lib/useWallet';
+
+const SignInButton = ({ config }) => {
+  const wallet = useWallet();
+
+  const signIn = () => wallet.requestSignIn(config);
+
+  return wallet.isSignedIn() ? (
+    <p>{wallet.getAccountId()}</p>
+  ) : (
+    <button onClick={() => signIn()}>Sign in with NEAR</button>
+  );
+};
+
+export default SignInButton;
+```
+
+### Sending tokens
+
+```jsx title="src/components/SendTokens.jsx"
+import React, { useState, useEffect } from 'react';
+import { utils } from 'near-api-js';
+import { useWallet } from './lib/useWallet';
+
+const {
+  format: { parseNearAmount },
+} = utils;
+
+const SendTokens = () => {
+  const wallet = useWallet();
+  const [amount, setAmount] = useState(0);
+  const [recipient, setRecipient] = useState('');
+
+  if (!wallet.isSignedIn()) {
+    return null;
+  }
+
+  const sendTokens = async () => {
+    // The account object allows us to send tokens via the `sendMoney` method.
+    // P.S. We need to call the `parseNearAmount` function to convert the amount of NEAR
+    // the user wants to send to yoctoNEAR (1e-24 NEAR) because the network stores values
+    // in yoctoNEAR.
+    await wallet.account().sendMoney(recipient, parseNearAmount(amount));
+  };
+
+  return (
+    <div>
+      <label>
+        Amount:{' '}
+        <input
+          type="number"
+          value={amount}
+          onChange={({ target: { value } }) => setAmount(value)}
+        />
+      </label>
+      <label>
+        Recipient:{' '}
+        <input
+          type="text"
+          value={recipient}
+          onChange={({ target: { value } }) => setRecipient(value)}
+        />
+      </label>
+      <button onClick={() => sendTokens()}>Send</button>
+    </div>
+  );
 };
 ```
