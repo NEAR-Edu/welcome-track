@@ -75,7 +75,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'Entrepreneurs/intro',
+            docId: 'Entrepreneurs/Find your place in web3',
             position: 'left',
             label: 'NEAR for entrepreneurs',
           },
@@ -182,6 +182,20 @@ const config = {
         additionalLanguages: ['rust'],
       },
     }),
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: '/Entrepreneurs',
+            to: '/Entrepreneurs/Find your place in web3',
+          },
+        ],
+      },
+    ],
+  ],
 };
 
 module.exports = config;
