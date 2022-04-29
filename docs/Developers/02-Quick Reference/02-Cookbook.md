@@ -38,7 +38,7 @@ export const NearProvider = ({ children, config }) => {
 
 And then use it to wrap your entire app.
 
-```js title="src/App.jsx"
+```js title="src/index.js"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -74,10 +74,27 @@ All of these hooks need to be inside of the `NearProvider` component subtree in 
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
+/**
+ * Get the NEAR connection object from the context.
+ */
 export const useNear = () => {
   const { near } = useContext(NearContext);
 
   return near;
+};
+```
+
+Example use case:
+
+```jsx title="src/NearComponent.jsx"
+import React from 'react';
+import { useNear } from './lib/useNear';
+
+export const NearComponent = () => {
+  const near = useNear();
+
+  // This will display the current network we are connected to e.g. 'testnet' or 'mainnet'
+  return <div>{near.connection.networkId}</div>;
 };
 ```
 
@@ -87,10 +104,27 @@ export const useNear = () => {
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
+/**
+ * Get the NEAR wallet connection object from the context.
+ */
 export const useWallet = () => {
   const { wallet } = useContext(NearContext);
 
   return wallet;
+};
+```
+
+Example use case:
+
+```jsx title="src/WalletComponent.jsx"
+import React from 'react';
+import { useWallet } from './lib/useWallet';
+
+export const WalletComponent = () => {
+  const wallet = useWallet();
+
+  // This will display the address of the currently signed in account
+  return wallet.isSignedIn() ? <div>{wallet.getAccountId()}</div> : null;
 };
 ```
 
@@ -100,6 +134,16 @@ export const useWallet = () => {
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
+/**
+ * Create a new contract object from the NEAR wallet object given the id and methods of
+ * the smart contract.
+ *
+ * @param {Object} contractConfig The smart contract configuration.
+ * @param {string} contractConfig.contractId The id of the smart contract.
+ * @param {Object} contractConfig.contractMethods The methods of the smart contract.
+ * @param {string[]} contractConfig.contractMethods.viewMethods The view methods of the smart contract.
+ * @param {string[]} contractConfig.contractMethods.changeMethods The change methods of the smart contract.
+ */
 export const useContract = ({
   contractId,
   contractMethods: { viewMethods, changeMethods },
@@ -110,5 +154,46 @@ export const useContract = ({
     viewMethods,
     changeMethods,
   });
+};
+```
+
+Example use case:
+
+```jsx title="src/ContractComponent.jsx"
+import React, { useState, useEffect } from 'react';
+import { useContract } from './lib/useContract';
+import { useWallet } from './lib/useWallet';
+
+export const ContractComponent = () => {
+  // Here we define the contract configuration and get a contract object.
+  const contract = useContract({
+    contractId: 'wrap.testnet',
+    contractMethods: {
+      viewMethods: ['ft_balance_of'],
+      changeMethods: [],
+    },
+  });
+  // We use the `useWallet` hook to get the wallet connection object.
+  const wallet = useWallet();
+  // Since executing smart contract methods takes time we will use a `useState` hook to
+  // store the result of the method execution.
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    // Calling smart contract methods is an async task so we create a async function to
+    // execute the method.
+    async function getBalance() {
+      // We check to see if an account is signed in, otherwise we cannot get a balance of an unknown account.
+      if (wallet.isSignedIn()) {
+        // We store the return value of the smart contract call in the `balance` variable.
+        setBalance(await contract.ft_balance_of(wallet.getAccountId()));
+      }
+    }
+
+    getBalance().catch(console.error);
+  }, [wallet, contract]);
+
+  // This will display the available wNEAR balance of the currently signed in account
+  return wallet.isSignedIn() ? <div>{balance}</div> : null;
 };
 ```
