@@ -46,4 +46,6 @@ If you've heard of NFTs (non-fungible tokens) or FTs (fungible tokens) before, y
 
 Token standards are a subset of contract standards, which are a set of well-defined interfaces that a contract must implement (if the contract is to be compliant with the standard, that is). Contract standards typically specify function declarations, requirements of those functions' behavior, some invariants that must hold regarding that behavior, maybe some data structures, etc. Other contracts may then easily interact with standard-compliant contracts.
 
+Find the list of well-known contract standards on the [NEAR Nomicon](https://nomicon.io/Standards/).
+
 The [NEAR Contract Standards crate](https://crates.io/crates/near-contract-standards) provides a few ready-made [contract standard implementations](https://docs.rs/near-contract-standards/latest/near_contract_standards/#macros) that are easy to add to your Rust contracts.
