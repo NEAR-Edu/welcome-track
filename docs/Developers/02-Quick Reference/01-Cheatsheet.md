@@ -210,11 +210,13 @@ await contract.view_method({
 ### Call change method
 
 ```js
-await contract.change_method(
-  {
+await contract.change_method({
+  args: {
     arg_name: 'value',
   },
-  '300000000000000', // attached gas (optional)
-  '1000000000000000000000000', // attached deposit in yoctoNEAR (optional)
-);
+  // attached deposit in yoctoNEAR (optional)
+  amount: '1000000000000000000000000',
+  // attached gas (optional)
+  gas: '300000000000000',
+});
 ```
