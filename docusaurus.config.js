@@ -1,7 +1,9 @@
+require('dotenv-flow').config(); // https://docusaurus.io/docs/deployment#using-environment-variables and https://www.npmjs.com/package/dotenv-flow and https://stackoverflow.com/a/68731401/470749
+
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const mouseflowProjectId = '9acc4ace-c756-4350-8643-6804551eabe0'; // https://us.mouseflow.com/websites/9acc4ace-c756-4350-8643-6804551eabe0/dashboards/1d1091d4-e671-4a0b-932c-2dfb4b9f0dd5
+const mouseflowProjectId = process.env.MOUSEFLOW_PROJECT_ID;
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -76,12 +78,12 @@ const config = {
             position: 'left',
             label: 'NEAR for React devs',
           },
-          // {
-          //   type: 'doc',
-          //   docId: 'Entrepreneurs/Find your place in web3',
-          //   position: 'left',
-          //   label: 'NEAR for entrepreneurs',
-          // },
+          {
+            type: 'doc',
+            docId: 'Entrepreneurs/Find your place in web3',
+            position: 'left',
+            label: 'NEAR for entrepreneurs',
+          },
           /*{
             to: '/blog', 
             label: 'Blog', 
@@ -191,13 +193,14 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
-          // {
-          //   from: '/Entrepreneurs',
-          //   to: '/Entrepreneurs/Find your place in web3',
-          // },
+          {
+            from: '/Entrepreneurs',
+            to: '/Entrepreneurs/Find your place in web3',
+          },
         ],
       },
     ],
+    'docusaurus-plugin-dotenv',
   ],
 };
 
