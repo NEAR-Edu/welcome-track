@@ -11,7 +11,7 @@ Here we offer self-study materials and tutorials to various groups of individual
 
 If you are a NEARbie who is:
 
-- An Entrepreneur, please go to [NEAR for entrepreneurs](/entrepreneurs/find-your-place-in-web3)
-- A React programming language developer, please go to [NEAR for React devs](/developers)
+- An Entrepreneur, please go to [NEAR for entrepreneurs](https://www.near.university/welcome/entrepreneurs)
+- A React programming language developer, please go to [NEAR for React devs](https://www.near.university/welcome/developers)
 
 Otherwise, we would be most glad to welcome you on our homepage, at [NEAR University](https://www.near.university), where you can find more information on how to learn, earn and connect with the NEAR community.
