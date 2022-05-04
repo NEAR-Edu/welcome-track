@@ -9,7 +9,7 @@ to wrap your component tree in to serve the NEAR connection object in it's conte
 
 Here is an example of how to do this.
 
-```js title="src/lib/near-provider.js"
+```js title="src/lib/near-provider.js" showLineNumbers
 import { createContext, useState, useEffect } from 'react';
 import { connect, WalletConnection } from 'near-api-js';
 
@@ -42,7 +42,7 @@ export const NearProvider = ({ children, config }) => {
 
 And then use it to wrap your entire app.
 
-```js title="src/index.js"
+```js title="src/index.js" showLineNumbers
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -164,7 +164,7 @@ export const useContract = ({
 
 Example use case:
 
-```jsx title="src/ContractComponent.jsx"
+```jsx title="src/ContractComponent.jsx" showLineNumbers
 import React, { useState, useEffect } from 'react';
 import { useContract } from './lib/useContract';
 import { useWallet } from './lib/useWallet';
@@ -230,7 +230,7 @@ export default SignInButton;
 
 ### Sending tokens
 
-```jsx title="src/components/SendTokens.jsx"
+```jsx title="src/components/SendTokens.jsx" showLineNumbers
 import React, { useState, useEffect } from 'react';
 import { utils } from 'near-api-js';
 import { useWallet } from './lib/useWallet';

@@ -47,7 +47,7 @@ into a terminal. This will create a new directory `wrap-near-app` based on `cra-
 
 To create a landing page we'll edit `src/App.jsx` placing a sign in button onto the page.
 
-```jsx {2,8-10,13-16}
+```jsx {2,8-10,13-16} showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection } from 'near-api-js';
 import { getConfig } from './config';
@@ -85,7 +85,7 @@ Next we'll add a form to wrap NEAR like in the code below.
 First, we will initialize our contract interface inside a `useEffect` hook.
 Then, we'll add the form containing an `<input>` element for the amount of NEAR to wrap.
 
-```jsx {2,5-7,11,12,18-26,28,40-43,48-50,51-62}
+```jsx {2,5-7,11,12,18-26,28,40-43,48-50,51-62} showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection, utils, Contract } from 'near-api-js';
 import { getConfig } from './config';
@@ -171,7 +171,7 @@ We have to update the contract interface to include the `ft_balance_of` method.
 We will add a `useEffect` hook to fetch the balance of the wrapped NEAR.
 Then we add a `<p>` element to display the balance.
 
-```jsx {6,13,24,34-35,36,61}
+```jsx {6,13,24,34-35,36,61} showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection, utils, Contract } from 'near-api-js';
 import { getConfig } from './config';
@@ -265,7 +265,7 @@ To add this functionality we need to update the contract interface to include th
 Then we have to add a `<select>` element to allow the user to choose what action they want to perform (`wrap` or `unwrap`).
 Finally we have to handle the different cases in our `handleSubmit` function.
 
-```jsx {14,24,51-65,75-82}
+```jsx {14,24,51-65,75-82} showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection, utils, Contract } from 'near-api-js';
 import { getConfig } from './config';

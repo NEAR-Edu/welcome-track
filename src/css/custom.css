@@ -34,14 +34,14 @@
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 56, 0.1);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
 [data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(200, 200, 255, 0.1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
@@ -149,17 +149,6 @@ h6 {
 
 hr {
   opacity: 0.2;
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 56, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgb(200, 200, 255, 0.1);
 }
 
 /* ------------------------------------------- */
@@ -329,6 +318,8 @@ hr {
   --ifm-tabs-color-active-border: var(--ifm-tabs-color-active);
   --ifm-tabs-padding-horizontal: 1rem;
   --ifm-tabs-padding-vertical: 0.5rem;
+
+  --docusaurus-highlighted-code-line-bg: rgba(100, 100, 155, 0.2);
 }
 
 /* ------------------------------------------- */
@@ -770,24 +761,4 @@ nav.pagination-nav {
 
 .theme-doc-sidebar-item-link-level-2 {
   --ifm-font-weight-semibold: 400;
-}
-
-/* ------------------------------------------- */
-/* Code Block line numbers */
-/* Example from: https://gist.github.com/uditalias/3969a20ef759bf3a8757499429b30063 */
-/* ------------------------------------------- */
-.theme-code-block {
-  counter-reset: line-number;
-}
-.theme-code-block .language-jsx .token-line::before,
-.theme-code-block .language-js .token-line::before {
-  counter-increment: line-number;
-  content: counter(line-number);
-  margin-right: calc(var(--ifm-pre-padding) * 1.5);
-  text-align: right;
-  min-width: 2.5rem;
-  display: inline-block;
-  opacity: 0.3;
-  position: sticky;
-  left: var(--ifm-pre-padding);
 }

@@ -28,7 +28,7 @@ This will create a new directory called `my-near-app` containing a React applica
 
 Your `App.jsx` file will look something like this:
 
-```jsx title="src/App.jsx"
+```jsx title="src/App.jsx" showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection, utils, Contract } from 'near-api-js';
 import { getConfig } from './config';
