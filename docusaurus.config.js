@@ -74,13 +74,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'Developers/intro',
+            docId: 'developers/intro',
             position: 'left',
             label: 'NEAR for React devs',
           },
           {
             type: 'doc',
-            docId: 'Entrepreneurs/Find your place in web3',
+            docId: 'entrepreneurs/find-your-place-in-web3',
             position: 'left',
             label: 'NEAR for entrepreneurs',
           },
@@ -194,8 +194,8 @@ const config = {
       {
         redirects: [
           {
-            from: '/Entrepreneurs',
-            to: '/Entrepreneurs/Find your place in web3',
+            from: '/entrepreneurs',
+            to: '/entrepreneurs/find-your-place-in-web3',
           },
         ],
       },

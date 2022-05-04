@@ -1,3 +1,7 @@
+---
+title: Algorand
+---
+
 ## Account Identifiers
 
 ### Algorand Addresses

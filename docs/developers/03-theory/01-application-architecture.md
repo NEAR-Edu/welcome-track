@@ -1,3 +1,7 @@
+---
+title: Application Architecture
+---
+
 Decentralized applications (a.k.a. **dapps** or **dApps**) built on NEAR typically consist of the following primary components.
 
 ## Smart Contract

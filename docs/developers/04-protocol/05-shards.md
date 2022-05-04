@@ -1,3 +1,7 @@
+---
+title: Shards
+---
+
 Blockchain sharding on NEAR is a concept inspired by [database sharding](https://www.digitalocean.com/community/tutorials/understanding-database-sharding). However, instead of partitioning tables, we're partitioning _blocks_.
 
 :::note

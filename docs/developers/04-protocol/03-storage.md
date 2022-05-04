@@ -1,3 +1,7 @@
+---
+title: Storage
+---
+
 Data. There's a lot of data to be had when it comes to blockchain applications. All NEAR accounts have some segment of the entire state of the blockchain (that is, the most up-to-date version of the data associated with the blockchain) assigned to them to manage. This includes balances, access keys, smart contract code, etc.
 
 Storing immutable data on the blockchain has some cost associated with it. Luckily, on NEAR Protocol, that cost is pretty low, weighing in at [1 NEAR / 100kb](https://docs.near.org/docs/concepts/storage-staking#how-much-does-it-cost).

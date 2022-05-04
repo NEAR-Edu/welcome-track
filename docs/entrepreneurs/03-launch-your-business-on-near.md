@@ -1,3 +1,7 @@
+---
+title: Launch your business on NEAR
+---
+
 If you’re an entrepreneur running a business and you’re curious about how to bring ii to NEAR take a look at these resources:
 
 Courses:

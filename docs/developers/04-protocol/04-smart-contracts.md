@@ -1,3 +1,7 @@
+---
+title: Smart Contracts
+---
+
 Actions on the blockchain involve **actors**, that is, entities that perform behaviors. There are two primary types of actors that participate in on-chain activities: external actors and autonomous, on-chain actors.
 
 Normal users, validators, oracles, etc. all fall in the category of external actor.
@@ -22,7 +26,7 @@ What about the "contract" part? The logic governing the behavior of a smart cont
 Since accounts can have contracts deployed to them multiple times (through the use of a full-access key), an account must have all access keys removed before the code deployed to the account can be declared immutable.
 :::
 
-In summary, smart contracts are deterministic programs that run in the context of a blockchain. They are allowed to manage some persistent [storage](./Storage) and perform interactions (i.e. send transactions) to other smart contracts.
+In summary, smart contracts are deterministic programs that run in the context of a blockchain. They are allowed to manage some persistent [storage](./storage) and perform interactions (i.e. send transactions) to other smart contracts.
 
 ## Smart contracts on NEAR
 

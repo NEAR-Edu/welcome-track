@@ -1,3 +1,7 @@
+---
+title: Cheatsheet
+---
+
 ## Command-line Interface
 
 ### Installation

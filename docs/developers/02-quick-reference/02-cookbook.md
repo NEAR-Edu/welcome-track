@@ -1,3 +1,7 @@
+---
+title: Cookbook
+---
+
 ## Provider
 
 If you want to use NEAR throughout your React app, you would probably want to add a provider
@@ -54,7 +58,7 @@ root.render(
     <NearProvider config={getConfig('testnet')}>
       <App />
     </NearProvider>
-  </React.StrictMode>,
+  </react.StrictMode>,
 );
 ```
 

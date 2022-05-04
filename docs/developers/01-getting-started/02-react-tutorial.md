@@ -1,3 +1,7 @@
+---
+title: React Tutorial
+---
+
 In this tutorial you will learn how to use `near-api-js` to interact with the blockchain in React applications.
 We will interact with the `wrap` contract for NEAR tokens. The contract allows us to wrap NEAR tokens into wNEAR (essentialy minting a different kind of fungible token).
 Wrapping tokens is a way of representing a cryptocurrency from another blockchain, or any other asset, in the original currency (pegging the to the value of the other asset). The wrapped token allows the asset to be used on the original blockchain for using that blockchains functionality, while preserving the original value making it possible to later trade the wrapped token for the original asset.

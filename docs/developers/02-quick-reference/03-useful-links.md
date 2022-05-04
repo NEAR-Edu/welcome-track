@@ -1,6 +1,10 @@
+---
+title: Useful links
+---
+
 ### Guides
 
-- [The Beginner’s Guide to the NEAR Blockchain ](https://near.org/blog/the-beginners-guide-to-the-near-blockchain/) This guide is intended to help anyone interested in understanding what NEAR actually is.
+- [The Beginner’s Guide to the NEAR Blockchain](https://near.org/blog/the-beginners-guide-to-the-near-blockchain/) This guide is intended to help anyone interested in understanding what NEAR actually is.
 - [NEAR Get started](https://docs.near.org/docs/develop/basics/getting-started) Here's a quick overview of essential resources you will use when developing on NEAR.
 - [New to NEAR](https://docs.near.org/docs/concepts/new-to-near) Various concepts explained (hint: navigate with the left panel).
 - [Near Blockchain Concepts](https://www.youtube.com/playlist?list=PL9tzQn_TEuFWJwvBg5V6EVa2DtYL_-2lJ) In this series, you can learn how core concepts of NEAR Protocol fit together and how to observe them through APIs, CLI, and Explorer.

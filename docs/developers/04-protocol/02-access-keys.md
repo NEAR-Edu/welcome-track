@@ -1,3 +1,7 @@
+---
+title: Access Keys
+---
+
 In order for a transaction to be applied to the blockchain, it must be cryptographically signed by a valid key. NEAR accounts may have any number of access keys attached to them, with optional permissions. A valid transaction must contain a signature from one of these keys.
 
 ## Full-Access Keys
