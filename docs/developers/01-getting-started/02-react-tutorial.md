@@ -18,7 +18,7 @@ You can also find a CodeSandbox of the tutorial app [here](https://codesandbox.i
 
 ## The steps
 
-The steps we will follow are layed out here:
+The steps we will follow are laid out here:
 
 1. [create a NEAR Account](#1-create-a-near-account)
 2. [create a new React app using `cra-template-near-js`](#2-create-a-react-application)
