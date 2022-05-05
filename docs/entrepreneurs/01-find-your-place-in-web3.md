@@ -8,7 +8,7 @@ Getting started with Web3 might feel a little daunting. The NEAR University team
 
 If you’re an experienced entrepreneur or a “wantrepreneur” who is curious about the Web3 space and considering building your next venture within it, we’ve got you covered. In this post, we will cover why Web3 is important and what it makes possible.
 
-Check out this article that explores why entrepreneurs should consider starting or moving a business to Web3.:
+Check out this article that explores why entrepreneurs should consider starting or moving a business to Web3.: <https://medium.com/near-university/why-web3-86fc15418f8e>
 
 Here’s an article about why decentralization matters written by a16z’s Chris Dixon: <https://onezero.medium.com/why-decentralization-matters-5e3f79f7638e>
 
@@ -16,7 +16,7 @@ Here’s an article about why decentralization matters written by a16z’s Chris
 
 Now that you’ve learned a little bit about why you should consider starting a project on Web3, check out why NEAR is the best platform to build on. . Here you’ll learn about scalability, interoperability, and more.
 
-Check out this article that explores why entrepreneurs should bring their ideas to NEAR:
+Check out this article that explores why entrepreneurs should bring their ideas to NEAR: <https://medium.com/near-university/why-near-for-entrepreneurs-5fdf7635024>
 
 ## Who is building on NEAR?
 
