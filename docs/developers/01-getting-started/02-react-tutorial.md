@@ -47,7 +47,7 @@ into a terminal. This will create a new directory `wrap-near-app` based on `cra-
 
 To create a landing page we'll edit `src/App.jsx` placing a sign in button onto the page.
 
-```jsx {2,8-10,13-16} showLineNumbers
+```jsx {2,3,8-10,13-16} showLineNumbers
 import React, { useEffect, useState } from 'react';
 import { connect, WalletConnection } from 'near-api-js';
 import { getConfig } from './config';
@@ -75,6 +75,7 @@ export default function App() {
 ```
 
 - **Line 2** - import `connect` and `WalletConnection` from [near-api-js](https://github.com/near/near-api-js).
+- **Line 3** - `getConfig` contains information required to connect to the NEAR testnet. Read more about it [here](/developers/quick-reference/cookbook#config)
 - **Line 8-10** - establish a connection with the NEAR testnet.
 - **Line 13-16** - request a sign in with the `wrap.testnet` contract (using `near_deposit` and `near_withdraw` methods of the contract).
 

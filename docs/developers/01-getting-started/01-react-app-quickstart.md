@@ -185,7 +185,7 @@ Here you have usage examples of the four main functionalities you will be using 
 
 You can find the usage example of how to use a [`WalletConnection`](https://near.github.io/near-api-js/classes/walletaccount.walletconnection.html) to sign users in and query the user's data.
 
-```js
+```js showLineNumbers
 const [wallet, setWallet] = useState(null);
 
 const handleLogin = () => {
@@ -210,7 +210,7 @@ wallet
 
 How to call view methods on smart contracts:
 
-```js
+```js showLineNumbers
 contract.getCounter().then((counter) => {
   setCounter(counter);
 });
@@ -220,7 +220,7 @@ contract.getCounter().then((counter) => {
 
 And how to call change methods on smart contracts:
 
-```js
+```js showLineNumbers
 await contract.incrementCounter({
   args: { value: 1 },
   amount: deposit.toFixed(0),
