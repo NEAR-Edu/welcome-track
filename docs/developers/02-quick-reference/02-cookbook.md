@@ -161,14 +161,6 @@ export const WalletComponent = () => {
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
-type ContractConfig = {
-  contractId: string,
-  contractMethods: {
-    viewMethods: string,
-    changeMethods: string,
-  },
-};
-
 /**
  * Create a new contract object from the NEAR wallet object given the id and methods of
  * the smart contract.
@@ -182,7 +174,7 @@ type ContractConfig = {
 export const useContract = ({
   contractId,
   contractMethods: { viewMethods, changeMethods },
-}: ContractConfig) => {
+}) => {
   const wallet = useWallet();
 
   return new Contract(wallet.account(), contractId, {
