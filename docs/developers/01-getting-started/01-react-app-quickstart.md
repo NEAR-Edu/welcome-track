@@ -8,6 +8,10 @@ To start integrating NEAR in your React application, you can use the [Create Rea
 If you are looking for a more step by step approach, check out the [full tutorial](/developers/getting-started/react-tutorial).
 :::
 
+## Create a NEAR Account
+
+Check out the official docs to get started creating a NEAR account [here](https://docs.near.org/docs/develop/basics/create-account).
+
 ## Project Initialization
 
 Simply run the following command in your terminal:
@@ -185,7 +189,7 @@ Here you have usage examples of the four main functionalities you will be using 
 
 You can find the usage example of how to use a [`WalletConnection`](https://near.github.io/near-api-js/classes/walletaccount.walletconnection.html) to sign users in and query the user's data.
 
-```js
+```js showLineNumbers
 const [wallet, setWallet] = useState(null);
 
 const handleLogin = () => {
@@ -210,7 +214,7 @@ wallet
 
 How to call view methods on smart contracts:
 
-```js
+```js showLineNumbers
 contract.getCounter().then((counter) => {
   setCounter(counter);
 });
@@ -220,7 +224,7 @@ contract.getCounter().then((counter) => {
 
 And how to call change methods on smart contracts:
 
-```js
+```js showLineNumbers
 await contract.incrementCounter({
   args: { value: 1 },
   amount: deposit.toFixed(0),

@@ -27,7 +27,7 @@ export const NearProvider = ({ children, config }) => {
       setWallet(new WalletConnection(near));
     }
 
-    setup().catch(console.error);
+    connectNear().catch(console.error);
   }, []);
 
   const isConnected = Boolean(near && wallet);
@@ -37,6 +37,29 @@ export const NearProvider = ({ children, config }) => {
       {isConnected && children}
     </NearContext.Provider>
   );
+};
+```
+
+## Config
+
+```jsx title="src/config.js" showLineNumbers
+import { keyStores } from 'near-api-js';
+
+/**
+ * Function that returns a NEAR connection configuration object based on the given networkId.
+ *
+ * @param  {string} networkId='testnet'
+ * @return {object}
+ */
+export const getConfig = (networkId = 'testnet') => {
+  return {
+    keyStore: new keyStores.BrowserLocalStorageKeyStore(),
+    networkId,
+    nodeUrl: `https://rpc.${networkId}.near.org`,
+    walletUrl: `https://wallet.${networkId}.near.org`,
+    helperUrl: `https://helper.${networkId}.near.org`,
+    explorerUrl: `https://explorer.${networkId}.near.org`,
+  };
 };
 ```
 
@@ -74,7 +97,7 @@ All of these hooks need to be inside of the `NearProvider` component subtree in 
 
 ### useNear
 
-```js title="src/lib/useNear.js"
+```js title="src/lib/useNear.js" showLineNumbers
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
@@ -90,7 +113,7 @@ export const useNear = () => {
 
 Example use case:
 
-```jsx title="src/NearComponent.jsx"
+```jsx title="src/NearComponent.jsx" showLineNumbers
 import React from 'react';
 import { useNear } from './lib/useNear';
 
@@ -104,7 +127,7 @@ export const NearComponent = () => {
 
 ### useWallet
 
-```js title="src/lib/useWallet.js"
+```js title="src/lib/useWallet.js" showLineNumbers
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
@@ -120,7 +143,7 @@ export const useWallet = () => {
 
 Example use case:
 
-```jsx title="src/WalletComponent.jsx"
+```jsx title="src/WalletComponent.jsx" showLineNumbers
 import React from 'react';
 import { useWallet } from './lib/useWallet';
 
@@ -134,7 +157,7 @@ export const WalletComponent = () => {
 
 ### useContract
 
-```js title="src/lib/useContract.js"
+```js title="src/lib/useContract.js" showLineNumbers
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
 
@@ -157,7 +180,6 @@ export const useContract = ({
   return new Contract(wallet.account(), contractId, {
     viewMethods,
     changeMethods,
-    sender: wallet.account(),
   });
 };
 ```
@@ -209,7 +231,7 @@ Here are some examples of common use cases:
 
 ### Sign in button
 
-```jsx title="src/components/SignInButton.jsx"
+```jsx title="src/components/SignInButton.jsx" showLineNumbers
 import React from 'react';
 import { useWallet } from './lib/useWallet';
 

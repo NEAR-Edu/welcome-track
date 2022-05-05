@@ -116,7 +116,7 @@ npm install --save near-api-js
 
 ### Connect to RPC
 
-```js
+```js showLineNumbers
 import { connect, keyStores } as nearApi from 'near-api-js';
 
 const networkId = 'testnet'; // or 'mainnet', 'betanet'
@@ -133,7 +133,7 @@ const near = await connect({
 
 ### Authenticate wallet
 
-```js {12-15}
+```js {12-15} showLineNumbers
 import { WalletConnection } from 'near-api-js';
 
 const wallet = new WalletConnection(near);
@@ -167,14 +167,25 @@ The `methodNames` list is optional. This is how function call access keys are li
 
 ### Read Account Balance
 
-```js
+```js showLineNumbers
 const account = await near.account('<account ID>');
 const balance = await account.getAccountBalance();
 ```
 
-### Send Tokens
+Sample response:
 
 ```js
+{
+  available: '5906378735324665985186940';
+  staked: '0';
+  stateStaked: '40520000000000000000000';
+  total: '5946898735324665985186940';
+}
+```
+
+### Send Tokens
+
+```js showLineNumbers
 await wallet.account().sendMoney(
   '<receiver account ID>',
   '1000000000000000000000000', // amount in yoctoNEAR
@@ -183,7 +194,7 @@ await wallet.account().sendMoney(
 
 ### Instantiate Contract Object
 
-```js {4-11}
+```js {4-11} showLineNumbers
 import { Contract } from 'near-api-js';
 
 const contract = new Contract(wallet.account(), '<contract account ID>', {
@@ -205,7 +216,7 @@ As opposed to the method names specified when [creating an access key](#authenti
 
 ### Call view method
 
-```js
+```js showLineNumbers
 await contract.view_method({
   arg_name: 'arg_value',
 });
@@ -213,7 +224,7 @@ await contract.view_method({
 
 ### Call change method
 
-```js
+```js showLineNumbers
 await contract.change_method({
   args: {
     arg_name: 'value',
@@ -223,4 +234,64 @@ await contract.change_method({
   // attached gas (optional)
   gas: '300000000000000',
 });
+```
+
+### Call change method and wait for FinalExecutionOutcome
+
+```js showLineNumbers
+const account = await near.account('<account ID>');
+const result = await account.functionCall({
+  contractId: accountName,
+  methodName: 'increment',
+  attachedDeposit: '1000000000000000000000000',
+  gas: '300000000000000',
+  args: { order_details: 'some details' },
+});
+```
+
+Example `result` is below. Learn more about [FinalExecutionOutcome](https://near.github.io/near-api-js/interfaces/providers_provider.finalexecutionoutcome.html)
+
+```js
+{
+  receipts_outcome: [
+    {
+      block_hash: 'AiBCSZrJU2M16zce28v6Kp7EwJ41d5DH9X8HFq11s58d',
+      id: 'E7MZckXTtCAT18dxyDsrppEs4jYCdiu3BFELzeWEdXrR',
+      outcome: [Object],
+      proof: [Array]
+    },
+    {
+      block_hash: 'BvSBEirXP8SNH7M4yuy1Kc7U3yh3rqS5bJrwj9FSHB8Y',
+      id: 'AGW46279abYSCA21ziNJprmtSob5qoTFsdvGG5gJdM4r',
+      outcome: [Object],
+      proof: [Array]
+    }
+  ],
+  status: {
+    SuccessValue: 'Im9yZGVyX2RldGFpbHM6IG9yZGVySWQ6IDI3OTFDVW9BbGd0MGZ4akpXVnFsUGZLSVc1MCBzdGF0dXM6IFNDSEVEVUxFRCBkcml2ZXI6IGFiWElrYXcwRFdNVTJjdXp1MHRVc2RCZmJYSDIgb3JnYW5pemF0aW9uOiBlNjg3Y2IzYi1kZDk5LTQ0NmItYWI1MS0xY2QwNWYzODg1NWQi'
+  },
+  transaction: {
+    actions: [[Object]],
+    hash: '2BmtZ7npXLkr6PBAjhAsZGJRtC2ZXFC8zwPM6R7vNaFb',
+    nonce: 86674508000011,
+    public_key: 'ed25519:33qks4o8DUe9QHpE41wuqNSKPSNTqju6GuyDGWq99Sth',
+    receiver_id: 'dev-1649038224846-84379959752795',
+    signature: 'ed25519:4YvagLgeX2VpMpGhbhnywbcDUaCg219SYx5SKJHf5XokDoVGKDiuv4Je3XA2s5PfspowNF8CforbtxFx9pAVCrnS',
+    signer_id: 'dev-1649038224846-84379959752795'
+  },
+  transaction_outcome: {
+    block_hash: 'AiBCSZrJU2M16zce28v6Kp7EwJ41d5DH9X8HFq11s58d',
+    id: '2BmtZ7npXLkr6PBAjhAsZGJRtC2ZXFC8zwPM6R7vNaFb',
+    outcome: {
+      executor_id: 'dev-1649038224846-84379959752795',
+      gas_burnt: 2428341355592,
+      logs: [],
+      metadata: [Object],
+      receipt_ids: [Array],
+      status: [Object],
+      tokens_burnt: '242834135559200000000'
+    },
+    proof: [[Object], [Object], [Object]]
+  }
+}
 ```
