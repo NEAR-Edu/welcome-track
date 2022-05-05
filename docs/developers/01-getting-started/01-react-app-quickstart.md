@@ -10,7 +10,7 @@ If you are looking for a more step by step approach, check out the [full tutoria
 
 ## Create a NEAR Account
 
-Checkout the official docs to get started creating a NEAR account [here](https://docs.near.org/docs/develop/basics/create-account).
+Check out the official docs to get started creating a NEAR account [here](https://docs.near.org/docs/develop/basics/create-account).
 
 ## Project Initialization
 
