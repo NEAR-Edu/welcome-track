@@ -157,7 +157,6 @@ export const useContract = ({
   return new Contract(wallet.account(), contractId, {
     viewMethods,
     changeMethods,
-    sender: wallet.account(),
   });
 };
 ```
