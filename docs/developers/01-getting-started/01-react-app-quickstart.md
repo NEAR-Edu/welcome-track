@@ -8,6 +8,10 @@ To start integrating NEAR in your React application, you can use the [Create Rea
 If you are looking for a more step by step approach, check out the [full tutorial](/developers/getting-started/react-tutorial).
 :::
 
+## Create a NEAR Account
+
+Checkout the official docs to get started creating a NEAR account [here](https://docs.near.org/docs/develop/basics/create-account).
+
 ## Project Initialization
 
 Simply run the following command in your terminal:
