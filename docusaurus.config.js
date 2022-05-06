@@ -202,6 +202,7 @@ const config = {
     ],
     'docusaurus-plugin-dotenv',
   ],
+  clientModules: ['./src/plugins/onRouteUpdate.ts'],
 };
 
 module.exports = config;

@@ -39,3 +39,11 @@ When adding documentation, whether it be a single article or a whole folder (cat
 - Use [kebab case](https://www.theserverside.com/definition/Kebab-case) (e.g. lowercase separated by hyphens) filenames and folder names to maintain consistency in URL generation.
 - Use the `title` metadata field to set the title of the article for the sidebar and heading of the article. Try to keep it the same as the name of the file but with the actual casing and separators.
 - Use the `label` metadata field in the `_category_.json` file of the folder (category) to set the title of the category in the sidebar.
+
+## Editing footer links
+
+When editing footer links, please edit the `src/config/footerLinks.ts` file.
+You will see a variable with the name of `FOOTER_LINKS` which holds the links.
+Each persona has a different array of columns and links within those columns.
+
+**IMPORTANT**: Make sure that the persona name matches the name of the directory where the persona documentation is located at (e.g. for `developers` write `developers`, don't use abbreviations in this config if they are not used in the file name, like using `devs`).
