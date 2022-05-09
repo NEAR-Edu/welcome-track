@@ -24,6 +24,6 @@ When evaluating a platform as an entrepreneur, it’s important to know the type
 
 **Case Studies**
 
-- <https://near.org/case-studies/flux/>
-- <https://near.org/case-studies/mintbase/>
-- <https://near.org/case-studies/paras/>
+- Flux, is a cross-chain oracle built on NEAR. Read about how Flux built a fast, inexpensive, and decentralized Open Market Protocol on NEAR:<https://near.org/case-studies/flux/>
+- Mintbase is an NFT Platform. Read more about why they're building the “Shopify for NFT" on NEAR: <https://near.org/case-studies/mintbase/>
+- Paras is an all-in-one social NFT marketplace for creators and collectors. Here's why their journey of building on NEAR: <https://near.org/case-studies/paras/>
