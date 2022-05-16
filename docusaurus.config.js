@@ -76,7 +76,7 @@ const config = {
             type: 'doc',
             docId: 'developers/intro',
             position: 'left',
-            label: 'NEAR for React devs',
+            label: 'NEAR for developers',
           },
           {
             type: 'doc',
