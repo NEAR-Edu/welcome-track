@@ -25,7 +25,7 @@ impl MyContract {
         }
     }
 
-    fn assert_owner(&self) {
+    fn require_owner(&self) {
         require!(
             &env::predecessor_account_id() == self.owner_id,
             "Owner only",
@@ -38,7 +38,7 @@ impl MyContract {
 
     pub fn set_owner(&mut self, owner_id: AccountId) {
         // Only the owner is allowed to call this function
-        self.assert_owner();
+        self.require_owner();
 
         self.owner_id = owner_id;
     }
@@ -63,7 +63,7 @@ impl_ownership!(Contract, ownership);
 impl Contract {
     // Protected function
     pub fn owner_only(&self) {
-        self.ownership.assert_owner();
+        self.ownership.require_owner();
 
         // ...
     }

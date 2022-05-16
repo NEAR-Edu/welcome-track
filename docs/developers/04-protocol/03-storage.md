@@ -26,7 +26,7 @@ For example, a if a hashmap is storing some data using the prefix `"my_hashmap-"
 
 When choosing a prefix, it should be distinct from any other prefixes used in your smart contract to avoid the possibility of storage collisions.
 
-In the Rust SDK, there is a derive trait [`BorshStorageKey`](https://docs.rs/near-sdk/latest/near_sdk/derive.BorshStorageKey.html) that manages this unique generation for you:
+In the Rust SDK, there is a derive macro [`BorshStorageKey`](https://docs.rs/near-sdk/latest/near_sdk/derive.BorshStorageKey.html) that manages this unique generation for you:
 
 ```rust showLineNumbers
 #[derive(BorshSerialize, BorshStorageKey)]
