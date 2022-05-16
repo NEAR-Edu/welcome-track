@@ -160,6 +160,7 @@ export const WalletComponent = () => {
 ```js title="src/lib/useContract.js" showLineNumbers
 import { useContext } from 'react';
 import { NearContext } from './lib/near-provider';
+import { Contract } from 'near-api-js';
 
 /**
  * Create a new contract object from the NEAR wallet object given the id and methods of
