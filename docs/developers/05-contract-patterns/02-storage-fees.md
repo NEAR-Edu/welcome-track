@@ -82,6 +82,7 @@ The [`near-contract-standards`](https://crates.io/crates/near-contract-standards
 
 - Standard. Standard-compliant implementations act the same across the board.
 - Separation of concerns. Users maintain a separate storage fee record, allowing them to not worry about paying for storage when performing other function calls.
+- Safety. Storage-consuming function calls do not require deposits, so they can be mediated by a third party only holding a function-call access key.
 - Accounts can fund storage credits for other accounts.
 
 ### Disadvantages
