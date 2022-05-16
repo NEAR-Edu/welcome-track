@@ -13,19 +13,20 @@ The interactive course with quizzes will guide you through everything you need t
 
 If you have questions about anything related to NEAR, you're always welcome to ask our community on [StackOverflow](https://stackoverflow.com/questions/tagged/nearprotocol) and Discord ([NEAR Discord](https://near.chat/) and [NEAR University Discord](https://discord.gg/k4pxafjMWA)).
 
-Before getting started, be sure to create your NEAR account [here](/developers/getting-started/react-tutorial#1-create-a-near-account).
+Before getting started, be sure to create your NEAR account [here](/developers/react/getting-started/react-tutorial#1-create-a-near-account).
 
 ---
 
 ### Table of Contents
 
-- Getting Started
-  - [React App Quickstart](/developers/getting-started/react-app-quickstart) - The fastest way to start a NEAR React app
-  - [React Tutorial](/developers/getting-started/react-tutorial) - Step-by-step instructions showing how to build a sample app
-- Quick Reference
-  - [Cheatsheet](/developers/quick-reference/cheatsheet) - Helpful near-cli commands
-  - [Cookbook](/developers/quick-reference/cookbook) - Useful React snippets
-  - [Useful Links](/developers/quick-reference/useful-links) - The best resources for NEAR documentation
+- React Developers
+  - Getting Started
+    - [React App Quickstart](/developers/react/getting-started/react-app-quickstart) - The fastest way to start a NEAR React app
+    - [React Tutorial](/developers/react/getting-started/react-tutorial) - Step-by-step instructions showing how to build a sample app
+  - Quick Reference
+    - [Cheatsheet](/developers/react/quick-reference/cheatsheet) - Helpful near-cli commands
+    - [Cookbook](/developers/react/quick-reference/cookbook) - Useful React snippets
+    - [Useful Links](/developers/react/quick-reference/useful-links) - The best resources for NEAR documentation
 - Theory
   - [Application Architecture](/developers/theory/application-architecture) - How a frontend connects to a smart contract
 - Protocol

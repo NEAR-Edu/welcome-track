@@ -5,7 +5,7 @@ title: React App Quickstart
 To start integrating NEAR in your React application, you can use the [Create React App](https://create-react-app.dev/) template to bootstrap your project.
 
 :::note
-If you are looking for a more step by step approach, check out the [full tutorial](/developers/getting-started/react-tutorial).
+If you are looking for a more step by step approach, check out the [full tutorial](/developers/react/getting-started/react-tutorial).
 :::
 
 ## Create a NEAR Account
@@ -237,8 +237,8 @@ setCounter(await contract.getCounter());
 
 ## Next Steps
 
-For a more in-depth walkthrough of how to integrate NEAR in your React app, you can follow the [full tutorial](/developers/getting-started/react-tutorial).
+For a more in-depth walkthrough of how to integrate NEAR in your React app, you can follow the [full tutorial](/developers/react/getting-started/react-tutorial).
 
-If you want to explore some quick code examples, you can check out the Quick Reference section with the [Cheatsheet](/developers/quick-reference/cheatsheet) and [Cookbook](/developers/quick-reference/cookbook). In this section you can also find out about other useful NEAR resources in the [Useful Links](/developers/quick-reference/useful-links) section.
+If you want to explore some quick code examples, you can check out the Quick Reference section with the [Cheatsheet](/developers/react/quick-reference/cheatsheet) and [Cookbook](/developers/react/quick-reference/cookbook). In this section you can also find out about other useful NEAR resources in the [Useful Links](/developers/react/quick-reference/useful-links) section.
 
 Interested in theory and how Web3 apps are different from Web2 apps? Start with the [Architecture](/developers/theory/application-architecture) and [Account](/developers/protocol/accounts) explainers.
