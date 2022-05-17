@@ -5,6 +5,18 @@ require('dotenv-flow').config(); // https://docusaurus.io/docs/deployment#using-
 
 const mouseflowProjectId = process.env.MOUSEFLOW_PROJECT_ID;
 
+// https://stackoverflow.com/questions/72277029/how-can-i-embed-a-snippet-before-the-closing-body-tag-in-docusaurus
+// https://us.mouseflow.com/websites/
+const postBodyHtmlSnippets = `<script type="text/javascript">
+  window._mfq = window._mfq || [];
+  (function() {
+    var mf = document.createElement("script");
+    mf.type = "text/javascript"; mf.defer = true;
+    mf.src = "//cdn.mouseflow.com/projects/${mouseflowProjectId}.js";
+    document.getElementsByTagName("head")[0].appendChild(mf);
+  })();
+</script>`;
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -23,10 +35,6 @@ const config = {
   scripts: [
     // https://docusaurus.io/docs/api/docusaurus-config#scripts
     '//use.fontawesome.com/releases/v5.15.4/js/all.js',
-    {
-      src: `//cdn.mouseflow.com/projects/${mouseflowProjectId}.js`,
-      defer: true,
-    },
   ],
   stylesheets: [
     '//fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap',
@@ -203,6 +211,40 @@ const config = {
     'docusaurus-plugin-dotenv',
   ],
   clientModules: ['./src/plugins/onRouteUpdate.ts'],
+
+  // https://docusaurus.io/docs/api/docusaurus-config#ssrTemplate https://stackoverflow.com/questions/72277029/how-can-i-embed-a-snippet-before-the-closing-body-tag-in-docusaurus
+  ssrTemplate: `<!DOCTYPE html>
+<html <%~ it.htmlAttributes %>>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Docusaurus v<%= it.version %>">
+    <% if (it.noIndex) { %>
+      <meta name="robots" content="noindex, nofollow" />
+    <% } %>
+    <%~ it.headTags %>
+    <% it.metaAttributes.forEach((metaAttribute) => { %>
+      <%~ metaAttribute %>
+    <% }); %>
+    <% it.stylesheets.forEach((stylesheet) => { %>
+      <link rel="stylesheet" href="<%= it.baseUrl %><%= stylesheet %>" />
+    <% }); %>
+    <% it.scripts.forEach((script) => { %>
+      <link rel="preload" href="<%= it.baseUrl %><%= script %>" as="script">
+    <% }); %>
+  </head>
+  <body <%~ it.bodyAttributes %>>
+    <%~ it.preBodyTags %>
+    <div id="__docusaurus">
+      <%~ it.appHtml %>
+    </div>
+    <% it.scripts.forEach((script) => { %>
+      <script src="<%= it.baseUrl %><%= script %>"></script>
+    <% }); %>
+    <%~ it.postBodyTags %>
+    ${postBodyHtmlSnippets}
+  </body>
+</html>`,
 };
 
 module.exports = config;
