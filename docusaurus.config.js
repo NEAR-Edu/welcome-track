@@ -3,8 +3,6 @@ require('dotenv-flow').config(); // https://docusaurus.io/docs/deployment#using-
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const mouseflowProjectId = process.env.MOUSEFLOW_PROJECT_ID;
-
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -23,10 +21,6 @@ const config = {
   scripts: [
     // https://docusaurus.io/docs/api/docusaurus-config#scripts
     '//use.fontawesome.com/releases/v5.15.4/js/all.js',
-    {
-      src: `//cdn.mouseflow.com/projects/${mouseflowProjectId}.js`,
-      defer: true,
-    },
   ],
   stylesheets: [
     '//fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap',
