@@ -185,14 +185,15 @@ const config = {
   plugins: [
     [
       '@docusaurus/plugin-client-redirects',
-      {
+      /** @type {import('@docusaurus/plugin-client-redirects').Options} */
+      ({
         redirects: [
           {
             from: '/entrepreneurs',
             to: '/entrepreneurs/find-your-place-in-web3',
           },
         ],
-      },
+      }),
     ],
     'docusaurus-plugin-dotenv',
   ],
