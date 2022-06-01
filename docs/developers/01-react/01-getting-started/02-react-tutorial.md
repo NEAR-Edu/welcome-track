@@ -41,7 +41,7 @@ To start your project type
 npx create-react-app --template near-js wrap-near-app
 ```
 
-into a terminal. This will create a new directory `wrap-near-app` based on `cra-template-near-js` (see [Selecting a template](https://create-react-app.dev/docs/getting-started#selecting-a-template)).
+into a terminal. This will create a new directory `wrap-near-app` based on `cra-template-near-js` (see [Selecting a template](https://create-react-app.dev/docs/react/getting-started#selecting-a-template)).
 
 ### 3. Create a landing page
 
@@ -75,7 +75,7 @@ export default function App() {
 ```
 
 - **Line 2** - import `connect` and `WalletConnection` from [near-api-js](https://github.com/near/near-api-js).
-- **Line 3** - `getConfig` contains information required to connect to the NEAR testnet. Read more about it [here](/developers/quick-reference/cookbook#config)
+- **Line 3** - `getConfig` contains information required to connect to the NEAR testnet. Read more about it [here](/developers/react/quick-reference/cookbook#config)
 - **Line 8-10** - establish a connection with the NEAR testnet.
 - **Line 13-16** - request a sign in with the `wrap.testnet` contract (using `near_deposit` and `near_withdraw` methods of the contract).
 

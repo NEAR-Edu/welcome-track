@@ -12,7 +12,7 @@ Courses:
 
 If you’re a developer or have a developer on your team, here are some basics to get started:
 
-- [NEAR Docs: Getting Started](https://docs.near.org/docs/develop/basics/getting-started)
+- [NEAR Docs: Getting Started](https://docs.near.org/docs/develop/basics/react/getting-started)
 - [NEAR Learn: A repository of learning materials](https://github.com/Learn-NEAR)
 
 For funding to help accelerate your deployment to NEAR, check out the Funding section.
