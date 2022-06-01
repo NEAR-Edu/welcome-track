@@ -21,6 +21,7 @@ const config = {
   scripts: [
     // https://docusaurus.io/docs/api/docusaurus-config#scripts
     '//use.fontawesome.com/releases/v5.15.4/js/all.js',
+    '//cdn.weglot.com/weglot.min.js',
   ],
   stylesheets: [
     '//fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap',
