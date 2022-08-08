@@ -22,7 +22,7 @@ At a low-level, the storage API provides a simple key-value storage system, but 
 
 The collections operate using the concept of "storage prefixes," which are small, namespace-like byte arrays that are prefixed to the various keys a collection may put in storage.
 
-For example, a if a hashmap is storing some data using the prefix `"my_hashmap-"`, it may generate keys (for its internal use) that look like `"my_hashmap-0123456789abcdef"`.
+For example, if a hashmap is storing some data using the prefix `"my_hashmap-"`, it may generate keys (for its internal use) that look like `"my_hashmap-0123456789abcdef"`.
 
 When choosing a prefix, it should be distinct from any other prefixes used in your smart contract to avoid the possibility of storage collisions.
 
